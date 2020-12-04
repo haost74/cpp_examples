@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/haost/Рабочий стол/git_cpp/Task/src/TPool.cpp
-TPool.h
-/home/haost/Рабочий стол/git_cpp/Task/src/TPool.h
-
 /home/haost/Рабочий стол/git_cpp/Task/src/TPool.h
 functional
 -
@@ -35,10 +31,22 @@ functional
 -
 TPool.h
 /home/haost/Рабочий стол/git_cpp/Task/src/TPool.h
+test.cpp
+/home/haost/Рабочий стол/git_cpp/Task/src/test.cpp
 functional
 -
 future
 -
 queue
+-
+
+/home/haost/Рабочий стол/git_cpp/Task/src/test.cpp
+future
+-
+iostream
+-
+thread
+-
+utility
 -
 
