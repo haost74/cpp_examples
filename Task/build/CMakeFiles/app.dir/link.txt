@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/app.dir/src/main.cpp.o CMakeFiles/app.dir/src/TPool.cpp.o -o app  -lpthread 

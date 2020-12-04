@@ -1,3 +1,0 @@
-/home/haost/Рабочий стол/git_cpp/Task/build/CMakeFiles/rebuild_cache.dir
-/home/haost/Рабочий стол/git_cpp/Task/build/CMakeFiles/app.dir
-/home/haost/Рабочий стол/git_cpp/Task/build/CMakeFiles/edit_cache.dir
