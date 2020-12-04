@@ -7,6 +7,7 @@
 //#include "ThreadPool.h"
 
 #include "TPool.h"
+#include "promise.cpp"
 
 #include <functional>
 #include <future>
@@ -50,9 +51,11 @@ const std::string currentDateTime() {
 
 int main()
 {
-   std::cout << currentDateTime();
-   std::cout << " start" << '\n';
-   std::this_thread::sleep_for(std::chrono::seconds(100));
-   std::cout << currentDateTime();
-   std::cout << " stop" << '\n';
+
+    run();
+//    std::cout << currentDateTime();
+//    std::cout << " start" << '\n';
+//    std::this_thread::sleep_for(std::chrono::seconds(100));
+//    std::cout << currentDateTime();
+//    std::cout << " stop" << '\n';
 }
