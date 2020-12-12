@@ -15,7 +15,7 @@ private:
     std::queue< std::packaged_task<void()> > tasks;
     std::mutex queue_mutex;
     std::condition_variable condition;
-    bool stop;
+    bool stop{0};
 public:
     explicit TPool(size_t threads);
     ~TPool();

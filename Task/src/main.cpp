@@ -16,7 +16,7 @@
 
 void foo()
 {
-    call(myFunc, "123", 10.5, 48);
+    //call(myFunc, "123", 10.5, 48);
 
    pool::TPool pool(4);
    std::vector<std::future<int>> results;
@@ -49,10 +49,37 @@ const std::string currentDateTime() {
     return buf;
 }
 
+void start()
+{
+    
+      pool::TPool pool(4);
+      
+   std::vector<std::future<int>> results;
+    
+    for(int i = 0; i < 8; ++i){
+       results.emplace_back(
+         pool.enqueue([i]{
+             std::cout << "hello " << i << std::endl;
+                std::this_thread::sleep_for(std::chrono::seconds(1));
+                std::cout << "world " << i << std::endl;
+                return i*i;
+         })
+       );
+   }
+   /*
+
+      for(auto && result: results)
+        std::cout << result.get() << ' ';
+         std::cout << std::endl;
+         */
+}
+
 int main()
 {
-
-    run();
+     start();
+    
+   
+    //run();
 //    std::cout << currentDateTime();
 //    std::cout << " start" << '\n';
 //    std::this_thread::sleep_for(std::chrono::seconds(100));
