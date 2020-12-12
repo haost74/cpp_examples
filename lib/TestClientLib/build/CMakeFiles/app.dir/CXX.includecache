@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/src/Client.h
+sys/socket.h
+-
+sys/types.h
+-
+netinet/in.h
+-
+netdb.h
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+errno.h
+-
+arpa/inet.h
+-
+
+/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/src/Main.cpp
+string
+-
+Client.h
+/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/src/Client.h
+

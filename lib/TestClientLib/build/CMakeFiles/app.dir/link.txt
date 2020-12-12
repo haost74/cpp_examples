@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/app.dir/src/Main.cpp.o -o app  -Wl,-rpath,"/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib" ../libclient.so 
