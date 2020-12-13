@@ -67,10 +67,10 @@ RM = /snap/cmake/715/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib"
+CMAKE_SOURCE_DIR = "/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/build"
+CMAKE_BINARY_DIR = "/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/build/CMakeFiles" "/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/build/CMakeFiles" "/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -169,6 +169,33 @@ src/Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Main.cpp.s
 .PHONY : src/Main.cpp.s
 
+src/Port.o: src/Port.cpp.o
+
+.PHONY : src/Port.o
+
+# target to build an object file
+src/Port.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Port.cpp.o
+.PHONY : src/Port.cpp.o
+
+src/Port.i: src/Port.cpp.i
+
+.PHONY : src/Port.i
+
+# target to preprocess a source file
+src/Port.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Port.cpp.i
+.PHONY : src/Port.cpp.i
+
+src/Port.s: src/Port.cpp.s
+
+.PHONY : src/Port.s
+
+# target to generate assembly for a file
+src/Port.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Port.cpp.s
+.PHONY : src/Port.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -181,6 +208,9 @@ help:
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
+	@echo "... src/Port.o"
+	@echo "... src/Port.i"
+	@echo "... src/Port.s"
 .PHONY : help
 
 

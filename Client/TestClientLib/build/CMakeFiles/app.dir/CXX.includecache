@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/src/Client.h
+/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/src/Client.h
 sys/socket.h
 -
 sys/types.h
@@ -28,9 +28,19 @@ errno.h
 arpa/inet.h
 -
 
-/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/src/Main.cpp
+/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/src/Main.cpp
 string
 -
 Client.h
-/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/src/Client.h
+/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/src/Client.h
+Port.cpp
+/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/src/Port.cpp
+iostream
+-
+
+/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/src/Port.cpp
+utility
+-
+array
+-
 

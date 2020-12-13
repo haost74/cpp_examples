@@ -3,4 +3,7 @@
 
 CMakeFiles/app.dir/src/Main.cpp.o: ../src/Client.h
 CMakeFiles/app.dir/src/Main.cpp.o: ../src/Main.cpp
+CMakeFiles/app.dir/src/Main.cpp.o: ../src/Port.cpp
+
+CMakeFiles/app.dir/src/Port.cpp.o: ../src/Port.cpp
 

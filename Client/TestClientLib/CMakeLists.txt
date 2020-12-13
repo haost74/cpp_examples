@@ -9,7 +9,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 #include(${CMAKE_SOURCE_DIR}/MyStaticLibrary.a)
 
 add_executable(app 
-    src/Main.cpp src/Client.h
+    src/Main.cpp src/Client.h  src/Port.cpp
 )
 
 

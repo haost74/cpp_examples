@@ -1,4 +1,4 @@
-# Install script for directory: /home/haost/Рабочий стол/cpp_examples/lib/TestClientLib
+# Install script for directory: /home/haost/Рабочий стол/cpp_examples/Client/TestClientLib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

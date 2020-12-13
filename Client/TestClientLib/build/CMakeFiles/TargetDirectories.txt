@@ -1,3 +1,3 @@
-/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/build/CMakeFiles/rebuild_cache.dir
-/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/build/CMakeFiles/app.dir
-/home/haost/Рабочий стол/cpp_examples/lib/TestClientLib/build/CMakeFiles/edit_cache.dir
+/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/build/CMakeFiles/rebuild_cache.dir
+/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/build/CMakeFiles/app.dir
+/home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/build/CMakeFiles/edit_cache.dir
