@@ -17,5 +17,6 @@ class Client
       char* recvBuff;
       struct sockaddr_in serv_addr;
     public:
-    explicit Client(const char* address, int port, size_t sizeByff);  
+      explicit Client(const char* address, int port, 
+      size_t sizeByff, void(*getdata)(const char* data));  
 };

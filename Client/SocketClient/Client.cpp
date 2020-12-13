@@ -2,9 +2,8 @@
 #include <iostream>
 
 
-Client::Client(const char* address, int port, size_t sizeByff)
-{
-    std::cout << 1024 << '\n';
+Client::Client(const char* address, int port, size_t sizeByff, void(*getdata)(const char* data))
+{    
     char buff[sizeByff];
     recvBuff = buff;
     memset(recvBuff, '0', sizeof(recvBuff));
@@ -14,13 +13,11 @@ Client::Client(const char* address, int port, size_t sizeByff)
     }
 
 
-    std::cout << 1025 << '\n';
     memset(&serv_addr, '0', sizeof(serv_addr));
 
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(port);
 
-    std::cout << 1026 << '\n';
     if(inet_pton(AF_INET, address, &serv_addr.sin_addr)<=0)
     {
        //TODO
@@ -39,11 +36,22 @@ Client::Client(const char* address, int port, size_t sizeByff)
        recvBuff[n] = 0;
         if(fputs(recvBuff, stdout) == EOF)
         {
-            printf("\n Error : Fputs error\n");
+            
+            if(getdata != NULL)
+            {
+                auto  error = "\n Error : Fputs error\n";
+                getdata(error);
+            }
+            else
+            {
+                printf("\n Error : Fputs error\n");
+            }
+            
         }
-
-        std::cout << n << '\n';
-
+        else if(getdata != NULL)
+        {
+            getdata(recvBuff);
+        }            
     }
 
     close(sockfd);
