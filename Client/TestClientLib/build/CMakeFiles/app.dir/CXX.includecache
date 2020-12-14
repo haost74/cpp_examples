@@ -27,6 +27,8 @@ errno.h
 -
 arpa/inet.h
 -
+string
+-
 
 /home/haost/Рабочий стол/cpp_examples/Client/TestClientLib/src/Main.cpp
 string

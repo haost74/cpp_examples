@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-Client::Client(const char* address, int port, size_t sizeByff, void(*getdata)(const char* data))
+Client::Client(const char* address, int port, size_t sizeByff, void(*getdata)(const char* data, std::string str))
 {    
     char buff[sizeByff];
     recvBuff = buff;
@@ -31,8 +31,8 @@ Client::Client(const char* address, int port, size_t sizeByff, void(*getdata)(co
     
     
     while ((n = read(sockfd, recvBuff, sizeof(recvBuff)-1)) > 0)
-    {
-        close(sockfd);
+    {        
+        
        recvBuff[n] = 0;
         if(fputs(recvBuff, stdout) == EOF)
         {
@@ -40,17 +40,19 @@ Client::Client(const char* address, int port, size_t sizeByff, void(*getdata)(co
             if(getdata != NULL)
             {
                 auto  error = "\n Error : Fputs error\n";
-                getdata(error);
+                getdata(error, "");
             }
             else
             {
                 printf("\n Error : Fputs error\n");
-            }
-            
+            }           
         }
         else if(getdata != NULL)
         {
-            getdata(recvBuff);
+            std::cout << port << '\n';
+            getdata(recvBuff, std::to_string(port));
+            close(sockfd);
+            break;
         }            
     }
 

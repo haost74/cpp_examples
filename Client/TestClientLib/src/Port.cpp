@@ -1,3 +1,6 @@
+#ifndef __ARR_TEMP_CPP__
+#define  __ARR_TEMP_CPP__
+
 #include <utility>
 #include <array>
 
@@ -12,3 +15,5 @@ template <std::size_t N>
 constexpr std::array<int, N> make_inc_array() {
   return make_inc_array_impl(std::make_integer_sequence<int, N>{});
 }
+
+#endif

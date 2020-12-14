@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <errno.h>
 #include <arpa/inet.h>
+#include <string>
 
 
 class Client
@@ -18,5 +19,5 @@ class Client
       struct sockaddr_in serv_addr;
     public:
       explicit Client(const char* address, int port, 
-      size_t sizeByff, void(*getdata)(const char* data));  
+      size_t sizeByff, void(*getdata)(const char* data, std::string str));  
 };
