@@ -2,6 +2,17 @@
 
 #include <iostream>
 
+int set_nonblock(int fd){
+    int flags;
+    #if defined(O_NONBLOCK)
+    if(-1 == (flags- fcntl(fd, F_GETFL, 0))) flags = 0;
+    return fcntl(fd, F_SETFL, flags | O_NONBLOCK);
+    #else
+    flags = -1;
+    return ioctl(fd, FIOBIO, &flags);
+    #endif
+}
+
 
 int Send()
 {
@@ -39,43 +50,3 @@ int Send()
     std::cout << buffer << " " << "-----" << '\n';
     return 0;
 }
-
-void clientRun(){
-
-int sock_cli = socket(AF_INET,SOCK_STREAM, 0);
-
-struct sockaddr_in servaddr;
-    memset(&servaddr, 0, sizeof(servaddr));
-    servaddr.sin_family = AF_INET;
-    servaddr.sin_port = htons(MYPORT);  /// Server Port
-    servaddr.sin_addr.s_addr = inet_addr("192.168.1.72");  /// server ip
-
-     if (connect(sock_cli, (struct sockaddr *)&servaddr, sizeof(servaddr)) < 0)
-    {
-        perror("connect");
-        exit(1);
-    }
-
-    
-
-    char sendbuf[BUFFER_SIZE];
-    char recvbuf[BUFFER_SIZE];
-
-    while (fgets(sendbuf, sizeof(sendbuf), stdin) != NULL)
-    {
-        send(sock_cli, sendbuf, strlen(sendbuf), MSG_NOSIGNAL); /// Send
-        if(strcmp(sendbuf,"exit\n")==0)
-            break;
-        recv(sock_cli, recvbuf, sizeof(recvbuf), MSG_NOSIGNAL); /// Receiving
-        fputs(recvbuf, stdout);
-
-        memset(sendbuf, 0, sizeof(sendbuf));
-        memset(recvbuf, 0, sizeof(recvbuf));
-    }
-
-    close(sock_cli);
-
-}
-
-
-

@@ -17,7 +17,7 @@
 #define MYPORT  7000
 #define BUFFER_SIZE 1024
 
-void clientRun();
 int Send();
+int set_nonblock(int id);
 
 #endif
