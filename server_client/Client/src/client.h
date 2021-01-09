@@ -12,6 +12,8 @@
 #include <fcntl.h>
 #include <sys/shm.h>
 
+#include <signal.h>
+
 #define MYPORT  7000
 #define BUFFER_SIZE 1024
 

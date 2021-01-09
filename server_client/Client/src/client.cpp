@@ -5,6 +5,7 @@
 
 int Send()
 {
+    signal(SIGPIPE, SIG_IGN);
     int sock = 0, valread; 
     struct sockaddr_in serv_addr; 
     auto hello = "Hello from client"; 
@@ -62,10 +63,10 @@ struct sockaddr_in servaddr;
 
     while (fgets(sendbuf, sizeof(sendbuf), stdin) != NULL)
     {
-        send(sock_cli, sendbuf, strlen(sendbuf),0); /// Send
+        send(sock_cli, sendbuf, strlen(sendbuf), MSG_NOSIGNAL); /// Send
         if(strcmp(sendbuf,"exit\n")==0)
             break;
-        recv(sock_cli, recvbuf, sizeof(recvbuf),0); /// Receiving
+        recv(sock_cli, recvbuf, sizeof(recvbuf), MSG_NOSIGNAL); /// Receiving
         fputs(recvbuf, stdout);
 
         memset(sendbuf, 0, sizeof(sendbuf));

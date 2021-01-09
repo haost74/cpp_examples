@@ -6,6 +6,8 @@ void thread_task(){}
 
 void server() {
 
+    signal(SIGPIPE, SIG_IGN);
+
     int conn{-1};
     //printf("%d\n",AF_INET);
     //printf("%d\n",SOCK_STREAM);
@@ -52,7 +54,7 @@ void server() {
 
 
         memset(buffer, 0 ,sizeof(buffer));
-        int len = recv(conn, buffer, sizeof(buffer), 0);
+        int len = recv(conn, buffer, sizeof(buffer), MSG_NOSIGNAL);
         if(strcmp(buffer, "exit\n") == 0) break;
         
         std::string str(buffer);
@@ -62,7 +64,8 @@ void server() {
         //printf("%s", buffer);
         //You have to return data to make a complete request.
         //send(conn, buffer, len , 0);
-        send(conn, "client", len , 0);
+        send(conn, "client", len , MSG_NOSIGNAL);
+        //auto sig = MSG_NOSIGNAL;
     }
     close(conn);
     close(ss);
