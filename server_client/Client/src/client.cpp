@@ -26,6 +26,15 @@ int Send()
         printf("\n Socket creation error \n"); 
         return -1; 
     } 
+
+    //---------------------------------------------------------------------------------
+
+     const int opt = 1;
+     setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
+     setsockopt(sock, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(opt));
+
+    //--------------------------------------------------------------------------------- 
+
    
     serv_addr.sin_family = AF_INET; 
     serv_addr.sin_port = htons(MYPORT); 
